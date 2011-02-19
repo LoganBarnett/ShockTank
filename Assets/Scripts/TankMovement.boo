@@ -3,6 +3,7 @@ import UnityEngine
 class TankMovement(MonoBehaviour):
 	public wheels as GameObject
 	public speed = 100.0f
+	public breaking = 50.0f
 	wheelColliders as List of WheelCollider
 	
 	def Start():
@@ -11,7 +12,10 @@ class TankMovement(MonoBehaviour):
 			wheelColliders.Add(child.GetComponent[of WheelCollider]())
 	
 	def Update():
-		movement = Input.GetAxis("Move") * speed * Time.deltaTime
+		input = Input.GetAxis("Move")
+		movement = input * speed * Time.deltaTime
+		antiMovement = breaking * (1 - Mathf.Abs(input)) * Time.deltaTime
+		Debug.Log(wheelColliders[0].rpm)
 		for wheel in wheelColliders:
 			wheel.motorTorque = movement
-#			wheel.brakeTorque = movement
+			wheel.brakeTorque = antiMovement
