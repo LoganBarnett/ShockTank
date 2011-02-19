@@ -5,6 +5,7 @@ class TankShooter(MonoBehaviour):
 	public minPower = 10.0f
 	public projectilePrefab as GameObject
 	public muzzlePoint as GameObject
+	public shellFiredExplosionPrefab as GameObject
 	public powerFactor = 10.0f
 
 	fireNextFixedUpdate = false
@@ -21,4 +22,7 @@ class TankShooter(MonoBehaviour):
 			rotation = muzzlePoint.transform.rotation * Quaternion.Euler(0, 0, 90)
 			projectile = GameObject.Instantiate(projectilePrefab, position, rotation) as GameObject
 			projectile.rigidbody.AddRelativeForce(Vector3.left * maxPower * powerFactor)
+			
+			GameObject.Instantiate(shellFiredExplosionPrefab, position, rotation)
+			
 			fireNextFixedUpdate = false

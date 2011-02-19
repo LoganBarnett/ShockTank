@@ -15,7 +15,7 @@ class TankMovement(MonoBehaviour):
 		input = Input.GetAxis("Move")
 		movement = input * speed * Time.deltaTime
 		antiMovement = breaking * (1 - Mathf.Abs(input)) * Time.deltaTime
-		Debug.Log(wheelColliders[0].rpm)
+#		Debug.Log(wheelColliders[0].rpm)
 		for wheel in wheelColliders:
 			wheel.motorTorque = movement
 			wheel.brakeTorque = antiMovement
