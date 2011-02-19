@@ -7,11 +7,18 @@ class TankShooter(MonoBehaviour):
 	public muzzlePoint as GameObject
 	public powerFactor = 10.0f
 
+	fireNextFixedUpdate = false
+	
 	def Update():
 		Debug.DrawLine(muzzlePoint.transform.position, muzzlePoint.transform.position + Vector3.forward)
 
 		if (Input.GetButtonDown("Fire")):
+			fireNextFixedUpdate = true
+			
+	def FixedUpdate():
+		if fireNextFixedUpdate:
 			position = muzzlePoint.transform.position
-			rotation = muzzlePoint.transform.rotation
+			rotation = muzzlePoint.transform.rotation * Quaternion.Euler(0, 0, 90)
 			projectile = GameObject.Instantiate(projectilePrefab, position, rotation) as GameObject
 			projectile.rigidbody.AddRelativeForce(Vector3.left * maxPower * powerFactor)
+			fireNextFixedUpdate = false
