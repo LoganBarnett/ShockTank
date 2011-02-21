@@ -6,6 +6,7 @@ class TankShooter(MonoBehaviour):
 	public projectilePrefab as GameObject
 	public muzzlePoint as GameObject
 	public shellFiredExplosionPrefab as GameObject
+	public shellFiredSound as AudioClip
 	public powerFactor = 10.0f
 
 	fireNextFixedUpdate = false
@@ -24,5 +25,7 @@ class TankShooter(MonoBehaviour):
 			projectile.rigidbody.AddRelativeForce(Vector3.left * maxPower * powerFactor)
 			
 			GameObject.Instantiate(shellFiredExplosionPrefab, position, rotation)
+			
+			AudioSource.PlayClipAtPoint(shellFiredSound, position)
 			
 			fireNextFixedUpdate = false
