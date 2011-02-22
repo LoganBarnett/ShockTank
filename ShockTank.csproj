@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Scripts\CenterOfMass.boo" />
+     <None Include="Assets\Scripts\ShellExploder.boo" />
      <None Include="Assets\Scripts\ShellTip.boo" />
      <None Include="Assets\Scripts\TankMovement.boo" />
      <None Include="Assets\Scripts\TankShooter.boo" />
