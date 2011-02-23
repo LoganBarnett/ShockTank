@@ -1,4 +1,6 @@
 import UnityEngine
+import Finput
+#import Input
 
 class TankMovement(MonoBehaviour):
 	public wheels as GameObject
