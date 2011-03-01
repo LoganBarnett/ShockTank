@@ -1,4 +1,5 @@
 import UnityEngine
+import Finput
 
 class TankShooter(MonoBehaviour):
 	public maxPower = 100.0f

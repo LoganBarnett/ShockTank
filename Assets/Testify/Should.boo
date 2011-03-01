@@ -29,7 +29,12 @@ class Should():
 		shouldPassed = extendedCollided and otherCollided
 		shouldMessage = "${extended.name} did not collide with ${other.name}"
 		
-		return Should()
+		expectation = Should(Passed : shouldPassed, Message : shouldMessage, Type : "PassThrough")
+		
+		extendedCollider.Should = expectation
+		otherCollider.Should = expectation		
+		
+		return expectation
 
 	[Extension]
 	static def ShouldPassThrough(extended as MonoBehaviour, other as GameObject) as Should:

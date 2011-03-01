@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Scripts\Test\ClimbTest.boo" />
+     <None Include="Assets\Scripts\Test\RateOfFireTest.boo" />
      <None Include="Assets\Scripts\CenterOfMass.boo" />
      <None Include="Assets\Scripts\Finput.boo" />
      <None Include="Assets\Scripts\ShellExploder.boo" />
@@ -75,6 +76,8 @@
      <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\ skybox info.txt" />
+     <None Include="Assets\Testify\Expectation.boo" />
+     <None Include="Assets\Testify\ExpectationExtensions.boo" />
      <None Include="Assets\Testify\ExpectationManager.boo" />
      <None Include="Assets\Testify\Should.boo" />
      <None Include="Assets\Testify\TestCollider.boo" />
