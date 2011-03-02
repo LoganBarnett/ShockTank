@@ -1,5 +1,6 @@
 import UnityEngine
 import Finput
+import System.Collections
 
 class TankShooter(MonoBehaviour):
 	public maxPower = 100.0f
@@ -9,13 +10,15 @@ class TankShooter(MonoBehaviour):
 	public shellFiredExplosionPrefab as GameObject
 	public shellFiredSound as AudioClip
 	public powerFactor = 10.0f
+	public secondsPerShot = 2.0f
+	readyToFire = true
 
 	fireNextFixedUpdate = false
 	
 	def Update():
 		Debug.DrawLine(muzzlePoint.transform.position, muzzlePoint.transform.position + Vector3.forward)
 
-		if (Input.GetButtonDown("Fire")):
+		if (Input.GetButtonDown("Fire") and readyToFire):
 			fireNextFixedUpdate = true
 			
 	def FixedUpdate():
@@ -30,3 +33,9 @@ class TankShooter(MonoBehaviour):
 			AudioSource.PlayClipAtPoint(shellFiredSound, position)
 			
 			fireNextFixedUpdate = false
+			readyToFire = false
+			StartCoroutine(Reload())
+			
+	def Reload() as IEnumerator:
+		yield WaitForSeconds(secondsPerShot)
+		readyToFire = true

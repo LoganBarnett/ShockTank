@@ -7,6 +7,8 @@ class Expectation:
 		self.subject = subject
 		
 	static def op_Equality(expectation as Expectation, other as object):
-		Debug.Log(expectation.subject)
-		Debug.Log(other)
-		return Should(Passed : expectation.subject == other)
+		if expectation.subject != other:
+			raise ExpectationFailedException("Expected ${expectation.subject} to be equal to ${other}")
+		else:
+			return Should(Passed : expectation.subject == other)
+			

@@ -59,6 +59,7 @@
      <None Include="Assets\Scripts\TankMovement.boo" />
      <None Include="Assets\Scripts\TankOrientation.boo" />
      <None Include="Assets\Scripts\TankShooter.boo" />
+     <None Include="Assets\Scripts\TerrainGenerator.boo" />
      <None Include="Assets\Scripts\TurretControl.boo" />
      <None Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
      <None Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
@@ -76,8 +77,13 @@
      <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\ skybox info.txt" />
+     <Compile Include="Assets\TerrainToolkit\Editor\TerrainToolkitEditor.cs" />
+     <None Include="Assets\TerrainToolkit\Read me.txt" />
+     <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
+     <None Include="Assets\TerrainToolkit\TerrainToolkitEnums.js" />
      <None Include="Assets\Testify\Expectation.boo" />
      <None Include="Assets\Testify\ExpectationExtensions.boo" />
+     <None Include="Assets\Testify\ExpectationFailedException.boo" />
      <None Include="Assets\Testify\ExpectationManager.boo" />
      <None Include="Assets\Testify\Should.boo" />
      <None Include="Assets\Testify\TestCollider.boo" />
