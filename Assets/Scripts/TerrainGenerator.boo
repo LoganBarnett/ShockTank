@@ -8,6 +8,7 @@ class TerrainGenerator(MonoBehaviour):
 	public depthOffset = 30
 	public playableAreaWidth = 10
 	public trailOffWidth = 2
+	speed = 100.0f
 	
 	terrain as Terrain
 	
@@ -17,15 +18,22 @@ class TerrainGenerator(MonoBehaviour):
 		terrainData = terrain.terrainData
 		heightMatrix = matrix(single, terrainData.heightmapWidth, terrainData.heightmapHeight)
 		height = Random.Range(0f, 0.01f)
+#		perlin = Perlin()
+		noise = FractalNoise(1.27f, 2.04f, 8.36f)
 		for y in range(0, terrainData.heightmapHeight - 1):
-			height += Random.Range(-0.002f, 0.002f)
+#			height += Random.Range(-0.002f, 0.002f)
+#			height = SmoothRandom.Get(speed) * 0.01f
+#			height = perlin.Noise(height)
+			height = noise.HybridMultifractal(y * 0.0003F, 15.7F, 0.65F) * 0.05f;
+			Debug.Log(height)
+#		    height = SmoothRandom.Get(speed)
 #			Debug.Log(newHeight)
 			for x in range(depthOffset, playableAreaWidth + depthOffset):
 				heightMatrix[x,y] = height
 			for x in range(depthOffset - trailOffWidth, depthOffset):
-				heightMatrix[x,y] = newHeight / 2f
+				heightMatrix[x,y] = height / 2f
 			for x in range(playableAreaWidth + depthOffset, playableAreaWidth + depthOffset + trailOffWidth):
-				heightMatrix[x,y] = newHeight / 2f
+				heightMatrix[x,y] = height / 2f
 #				
 		terrain.terrainData.SetHeights(0, 0, heightMatrix)
 
