@@ -57,6 +57,7 @@
      <None Include="Assets\Scripts\Finput.boo" />
      <None Include="Assets\Scripts\ShellExploder.boo" />
      <None Include="Assets\Scripts\ShellTip.boo" />
+     <None Include="Assets\Scripts\TankBoundaries.boo" />
      <None Include="Assets\Scripts\TankMovement.boo" />
      <None Include="Assets\Scripts\TankOrientation.boo" />
      <None Include="Assets\Scripts\TankShooter.boo" />
