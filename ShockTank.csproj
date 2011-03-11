@@ -61,6 +61,7 @@
      <None Include="Assets\Scripts\TankMovement.boo" />
      <None Include="Assets\Scripts\TankOrientation.boo" />
      <None Include="Assets\Scripts\TankShooter.boo" />
+     <None Include="Assets\Scripts\TankSpawner.boo" />
      <None Include="Assets\Scripts\TerrainGenerator.boo" />
      <None Include="Assets\Scripts\TurretControl.boo" />
      <None Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />

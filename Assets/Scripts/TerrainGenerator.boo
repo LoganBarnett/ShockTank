@@ -38,10 +38,8 @@ class TerrainGenerator(MonoBehaviour):
 		for height in heights:
 			for x in range(depthOffset, playableAreaWidth + depthOffset):
 				heightMatrix[x,y] = height
-			for x in range(depthOffset - trailOffWidth, depthOffset):
-				heightMatrix[x,y] = height / 2f
-			for x in range(playableAreaWidth + depthOffset, playableAreaWidth + depthOffset + trailOffWidth):
-				heightMatrix[x,y] = height / 2f
+			for x in range(depthOffset, 0):
+				heightMatrix[x,y] = height * x / depthOffset
 			y += 1
 		terrain.terrainData.SetHeights(0, 0, heightMatrix)
 		
