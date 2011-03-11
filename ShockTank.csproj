@@ -50,9 +50,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\Console.cs" />
+     <Compile Include="Assets\Plugins\ConsoleCommandAttribute.cs" />
      <Compile Include="Assets\Plugins\Perlin.cs" />
      <None Include="Assets\Scripts\Test\ClimbTest.boo" />
      <None Include="Assets\Scripts\Test\RateOfFireTest.boo" />
+     <None Include="Assets\Scripts\Test\SpawnBombCommand.boo" />
      <None Include="Assets\Scripts\CenterOfMass.boo" />
      <None Include="Assets\Scripts\Finput.boo" />
      <None Include="Assets\Scripts\ShellExploder.boo" />
